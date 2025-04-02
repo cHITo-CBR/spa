@@ -15,8 +15,10 @@
     <script src="config/localjs/jquery-3.6.0.min.js"></script>
     <!-- Semantic UI JS -->
     <script src="config/localui/semantic.min.js"></script>
-
-
+    <!-- hello world -->
+<!-- hello world -->
+ <!-- hello world -->
+  <!-- hello world -->
     <style>
         /* Remove rounded corners for navigation */
         .ui.menu {
@@ -46,6 +48,15 @@
         <div class="menu" x-show="open" @click.outside="open = false">
             <a class="item" href="#" @click.prevent="navigateTo('chat/chat_list'); open = false;">Chat list</a>
             <a class="item" href="#" @click.prevent="navigateTo('chat/new_chat'); open = false;">New chat</a>
+        </div>
+    </div>
+
+     <!-- Dropdown with Alpine.js -->
+     <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">
+        Products <i class="dropdown icon"></i>
+        <div class="menu" x-show="open" @click.outside="open = false">
+            <a class="item" href="#" @click.prevent="navigateTo('Products/Products'); open = false;">Productlist</a>
+            <a class="item" href="#" @click.prevent="navigateTo('Products/new_product'); open = false;">New Product</a>
         </div>
     </div>
 

@@ -62,11 +62,15 @@
 
     <a class="item" @click.prevent="navigateTo('services/service')">Services</a>
 
-    <!-- Login/Logout Button -->
-    <div class="right menu">
-        <a class="ui green button"><i class="user icon"></i> Login</a>
-        <a href="#" class="ui item"></a>
+<!-- One right menu container with both buttons inside -->
+<div class="right menu">
+    <div class="item">
+      <a class="ui green small button"><i class="user icon"></i> Login</a>
     </div>
+    <div class="item" style="padding-left: 5px;">
+      <a class="ui grey small button"><i class="user icon"></i> Signup</a>
+    </div>
+  </div>
 
 </div>
 
@@ -90,6 +94,7 @@
     </script>
 
     
-    
+    <!-- Semantic UI Menu -->
 </body>
 </html>
+

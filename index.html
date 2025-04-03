@@ -55,8 +55,7 @@
      <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">
         Products <i class="dropdown icon"></i>
         <div class="menu" x-show="open" @click.outside="open = false">
-            <a class="item" href="#" @click.prevent="navigateTo('Products/Products'); open = false;">Productlist</a>
-            <a class="item" href="#" @click.prevent="navigateTo('Products/new_product'); open = false;">New Product</a>
+            <a class="item" href="#" @click.prevent="navigateTo('Products/Products'); open = false;">Productlist</a>        
         </div>
     </div>
 

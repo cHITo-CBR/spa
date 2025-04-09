@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js" defer></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .ui.segment {
+            background-color: #1e1e1e !important;
+            border: none !important;
+        }
+        .ui.header {
+            color: #00ff00 !important; /* Razer green */
+        }
+        .ui.button {
+            background-color: #00ff00 !important;
+            color: #121212 !important;
+        }
+        .ui.button:hover {
+            background-color: #00cc00 !important;
+        }
+        .ui.card {
+            background-color: #1e1e1e !important;
+            color: #ffffff !important;
+            text-align: center;
+            border: 1px solid #333 !important;
+            border-radius: 10px;
+        }
+        .ui.card img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+        }
+        .ui.card .content h3 {
+            margin-top: 10px;
+            color: #ffffff;
+        }
+        .ui.card .extra.content {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ui container">
+        <!-- Header Section -->
+        <div class="ui segment" x-data="{ showMenu: false }">
+            <div class="ui grid">
+                <div class="twelve wide column">
+                    <h1 class="ui header">Welcome to Our Shop</h1>
+                </div>
+                
+                </div>
+            </div>
+        </div>
+<!---  
+      <!-- Featured Products Section -->
+        <div class="ui segment">
+            <h2 class="ui header">Featured Products</h2>
+            <div class="ui stackable two column grid">
+                <div class="column">
+                    <h3>Gaming Gear Sale!</h3>
+                    <p>Get up to 50% off on premium gaming accessories.</p>
+                    <button class="ui button">Shop Now</button>
+                </div>
+                <div class="column">
+                    <img src="https://via.placeholder.com/600x300" alt="Featured Products" class="ui fluid image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Shop by Category Section -->
+        <div class="ui segment">
+            <h2 class="ui header">Shop by Category</h2>
+            <div class="ui stackable four column grid">
+                <div class="column">
+                    <div class="ui card">
+                        <img src="https://via.placeholder.com/150?text=Laptops" alt="Laptops">
+                        <div class="content">
+                            <h3>Laptops</h3>
+                        </div>
+                        <div class="extra content">
+                            <button class="ui button">View Products</button>
+                        </div>
+                    </div>
+                </div>
+             <div class="column">
+                    <div class="ui card">
+                        <img src="https://via.placeholder.com/150?text=Mice" alt="Mice">
+                        <div class="content">
+                            <h3>Mice</h3>
+                        </div>
+                        <div class="extra content">
+                            <button class="ui button">View Products</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui card">
+                        <img src="https://via.placeholder.com/150?text=Keyboards" alt="Keyboards">
+                        <div class="content">
+                            <h3>Keyboards</h3>
+                        </div>
+                        <div class="extra content">
+                            <button class="ui button">View Products</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui card">
+                        <img src="https://via.placeholder.com/150?text=Audio" alt="Audio">
+                        <div class="content">
+                            <h3>Audio</h3>
+                        </div>
+                        <div class="extra content">
+                            <button class="ui button">View Products</button>
+                        </div>
+                    </div>
+                </div>
+              <div class="column">
+                    <div class="ui card">
+                        <img src="https://via.placeholder.com/150?text=Chairs" alt="Chairs">
+                        <div class="content">
+                            <h3>Chairs</h3>
+                        </div>
+                        <div class="extra content">
+                            <button class="ui button">View Products</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui card">
+                        <img src="https://via.placeholder.com/150?text=Console" alt="Console">
+                        <div class="content">
+                            <h3>Console</h3>
+                        </div>
+                        <div class="extra content">
+                            <button class="ui button">View Products</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui card">
+                        <img src="https://via.placeholder.com/150?text=Mobile" alt="Mobile">
+                        <div class="content">
+                            <h3>Mobile</h3>
+                        </div>
+                        <div class="extra content">
+                            <button class="ui button">View Products</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui card">
+                        <img src="https://via.placeholder.com/150?text=Apparel+%26+Gear" alt="Apparel & Gear">
+                        <div class="content">
+                            <h3>Apparel & Gear</h3>
+                        </div>
+                        <div class="extra content">
+                            <button class="ui button">View Products</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ecommerce Application</title>
    
     <!-- Include Alpine.js -->
     <script defer src="config/localjs/alpine.min.js"></script>
@@ -17,136 +17,127 @@
     <script src="config/localui/semantic.min.js"></script>
   
     <style>
-        /* Remove rounded corners for navigation */
+        /* Navbar Styling */
         .ui.menu {
+            height: 60px; /* Set the desired height */
+            padding: 20px 20px; /* Adjust padding for better spacing */
             border-radius: 0 !important;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Style for the menu items */
+            border-bottom: 100px solid #28a745; /* Add a green line at the bottom */
+            background-color: #000306; /* Darker background for better contrast */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), /* Regular shadow */
+                          0 4px 10px 2px rgba(40, 167, 69, 0.8); /* Glowing green effect */
+                    }
         .ui.menu .item {
-            font-weight: 900;
-            transition: background-color 0.3s ease;
-        }
+            font-size: 17px; /* Increase font size */
+            color: #ffffff; /* White text for better visibility */
+            padding: 15px 20px; /* Adjust padding for better spacing */
+            border: none !important; /* Remove dividing line */
+            transition: background-color 0.3s ease, color 0.3s ease; 
+             }
 
-        /* Hover effects */
         .ui.menu .item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            border: 2px solid #28a745; /* Add a green border */  
         }
-
-        /* Dropdown Menu Style */
+        /* Dropdown Menu Styling */
         .ui.dropdown .menu {
-            border-radius: 0 !important; /* Remove rounded corners */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 8px !important; /* Add rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+            background-color: #1b1c1d; /* Match the navbar background */
+            border: 2px solid #28a745; /* Add a green border */
         }
-        .ui.menu .item.bold {
-            font-weight: 900; /* Make it extra bold */
-        } 
-/* Make it extra bold */
-    </style>
 
+        .ui.dropdown .menu .item {
+            color: #ffffff !important; /* White text for better visibility */
+            padding: 10px 15px; /* Adjust padding for better spacing */
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .ui.dropdown .menu .item:hover {
+            background-color: #28a745 !important; /* Green background on hover */
+            color: #ffffff !important; /* Keep text white on hover */
+        }
+
+        /* Buttons Styling */
+        .ui.green.button {
+            background: linear-gradient(90deg, #28a745, #218838) !important;
+            color: #fff !important;
+            border-radius: 5px !important;
+            transition: background 0.3s ease;
+        }
+
+        .ui.green.button:hover {
+            background: linear-gradient(90deg, #218838, #1e7e34) !important;
+        }
+
+        
+
+        .ui.grey.button:hover {
+            background: linear-gradient(90deg, #5a6268, #495057) !important;
+        }
+    </style>
 </head>
 <body>
   <!-- Semantic UI Menu -->
-<div class="ui inverted menu blue" x-data>
-    <a class="item" @click.prevent="navigateTo('home/welcome')">Home</a>
-    <a class="item" @click.prevent="navigateTo('about/about')">About</a>
-
-    <!-- Dropdown with Alpine.js -->
-    <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">
-        Contact <i class="dropdown icon"></i>
-        <div class="menu" x-show="open" @click.outside="open = false">
-            <a class="item" href="#" @click.prevent="navigateTo('contacts/contact_all'); open = false;">All Contacts</a>
-            <a class="item" href="#" @click.prevent="navigateTo('contacts/contact_add'); open = false;">Add Contact</a>
-        </div>
+  <div class="ui inverted menu" style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px;" x-data="{ showMenu: false }">
+    <!-- Logo Placeholder -->
+    <div class="item" style="padding: 0;">
+        <img src="path/to/logo-placeholder.png" alt="Logo" style="height: 40px; width: auto;">
     </div>
 
-    <!-- Dropdown with Alpine.js -->
-    <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">
-        Chat <i class="dropdown icon"></i>
-        <div class="menu" x-show="open" @click.outside="open = false">
-            <a class="item" href="#" @click.prevent="navigateTo('chat/chat_list'); open = false;">Chat list</a>
-            <a class="item" href="#" @click.prevent="navigateTo('chat/new_chat'); open = false;">New chat</a>
+    <!-- Navigation Links -->
+        <div style="display: flex; gap: 20px;">
+            <a class="item" @click.prevent="navigateTo('home/welcome')">Home</a>
+            <a class="item" @click.prevent="navigateTo('about/about')">About</a>
+        <!-- Dropdown for Contacts -->
+        <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">Contact <i class="dropdown icon"></i>
+            <div class="menu" x-show="open" @click.outside="open = false">
+                <a class="item" href="#" @click.prevent="navigateTo('contacts/contact_all'); open = false;">All Contacts</a>
+                <a class="item" href="#" @click.prevent="navigateTo('contacts/contact_add'); open = false;">Add Contact</a>
+            </div>
         </div>
+        <!-- Dropdown for Chat -->
+        <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">
+            Chat <i class="dropdown icon"></i>
+            <div class="menu" x-show="open" @click.outside="open = false">
+                <a class="item" href="#" @click.prevent="navigateTo('chat/chat_list'); open = false;">Chat list</a>
+                <a class="item" href="#" @click.prevent="navigateTo('chat/new_chat'); open = false;">New chat</a>
+            </div>
+        </div>
+
+        <!-- Dropdown for Products -->
+        <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">
+            Products <i class="dropdown icon"></i>
+            <div class="menu" x-show="open" @click.outside="open = false">
+                <a class="item" href="#" @click.prevent="navigateTo('Products/shop_home'); open = false;">HOME</a>
+                <a class="item" href="#" @click.prevent="navigateTo('Products/cart'); open = false;">CART</a>
+                <a class="item" href="#" @click.prevent="navigateTo('Products/track_order'); open = false;">ORDER</a>
+                <a class="item" href="#" @click.prevent="navigateTo('Products/checkout'); open = false;">CHECKOUT</a>
+            </div>
+        </div>
+        <a class="item" @click.prevent="navigateTo('services/service')">Services</a>
     </div>
 
-    <!-- Dropdown with Alpine.js -->
-    <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">
-        Products <i class="dropdown icon"></i>
-        <div class="menu" x-show="open" @click.outside="open = false">
-            <a class="item" href="#" @click.prevent="navigateTo('Products/Products'); open = false;">Product list</a>        
-        </div>
+    <!-- Right Menu -->
+    <div style="display: flex; margin-left: auto; gap: 15px;">
+        <a class="ui green small button"><i class="user icon"></i> Login</a>
+        <a class="ui grey small button"><i class="user icon"></i> Signup</a>
     </div>
+  </div>
 
-    <a class="item" @click.prevent="navigateTo('services/service')">Services</a>
+  <!-- Semantic UI Container for Page Content -->
+  <div class="ui container" id="app-content">
+      <!-- Dynamic content will be loaded here -->
+  </div>
 
-    <!-- One right menu container with both buttons inside -->
-    <div class="right menu">
-        <div class="item">
-            <a class="ui green small button"><i class="user icon"></i> Login</a>
-        </div>
-        <div class="item" style="padding-left: 5px;">
-            <a class="ui grey small button"><i class="user icon"></i> Signup</a>
-        </div>
-    </div>
-</div>
+  <script src="config/router.js"></script>
+  <script defer src="script/app.js"></script>
 
-<style>
-    /* Remove rounded corners for navigation */
-    .ui.menu {
-        border-radius: 0 !important;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        background-color: #1b1c1d; /* Darker background for better contrast */
-    }
-
-    /* Style for the menu items */
-    .ui.menu .item {
-        font-weight: bold;
-        color: #ffffff; /* White text for better visibility */
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    /* Hover effects */
-    .ui.menu .item:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #ffffff; /* Keep text white on hover */
-    }
-
-    /* Dropdown Menu Style */
-    .ui.dropdown .menu {
-        border-radius: 0 !important; /* Remove rounded corners */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Style for dropdown items */
-    .ui.dropdown .menu .item {
-        color: #333; /* Dark text for dropdown items */
-    }
-
-    /* Hover effect for dropdown items */
-    .ui.dropdown .menu .item:hover {
-        background-color: rgba(0, 0, 0, 0.1);
-        color: #000; /* Darker text on hover */
-    }
-</style>
-   <!-- Semantic UI Container for Page Content -->
-   <div class="ui container" id="app-content">
-       <!-- Dynamic content will be loaded here -->
-   </div>
-
-   <script src="config/router.js"></script>
-   <script defer src="script/app.js"></script>
-
-   <script>
-       if (typeof Alpine === 'undefined') {
-           console.error("Alpine.js is not loaded.");
-       } else {
-           console.log("Alpine.js loaded successfully:", Alpine.version);
-       }
-   </script>    
-    
-    
-
+  <script>
+      if (typeof Alpine === 'undefined') {
+          console.error("Alpine.js is not loaded.");
+      } else {
+          console.log("Alpine.js loaded successfully:", Alpine.version);
+      }
+  </script>
 </body>
 </html>
-

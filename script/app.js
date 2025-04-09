@@ -25,7 +25,20 @@ Alpine.store("GlobalFunctions", {
         } else {
             return {}; // Returns an empty object if not found
         }
-        
+    },
+
+    navigateTo(route) {
+        console.log(`Navigating to: ${route}`);
+        // Add your navigation logic here
+        // Example: dynamically load content into a specific container
+        const appContent = document.getElementById("app-content");
+        if (appContent) {
+            appContent.innerHTML = `<p>Loading ${route}...</p>`;
+            // Simulate loading content (replace this with actual logic)
+            setTimeout(() => {
+                appContent.innerHTML = `<p>Content for ${route} loaded.</p>`;
+            }, 1000);
+        }
     }
 });
 

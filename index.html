@@ -15,152 +15,113 @@
     <script src="config/localjs/jquery-3.6.0.min.js"></script>
     <!-- Semantic UI JS -->
     <script src="config/localui/semantic.min.js"></script>
-<<<<<<< HEAD
-  
+
     <style>
-        /* Navbar Styling */
+        /* Minimalist Navbar Styling */
         .ui.menu {
-            height: 60px; /* Set the desired height */
-            padding: 20px 20px; /* Adjust padding for better spacing */
-            border-radius: 0 !important;
-            border-bottom: 100px solid #28a745; /* Add a green line at the bottom */
-            background-color: #000306; /* Darker background for better contrast */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), /* Regular shadow */
-                          0 4px 10px 2px rgba(40, 167, 69, 0.8); /* Glowing green effect */
-                    }
+            height: 50px;
+            padding: 0 20px;
+            background-color: #ffffff; /* Flat white background */
+            border-bottom: 1px solid #e0e0e0; /* Subtle border */
+            box-shadow: none; /* Remove shadows */
+        }
+
         .ui.menu .item {
-            font-size: 17px; /* Increase font size */
-            color: #ffffff; /* White text for better visibility */
-            padding: 15px 20px; /* Adjust padding for better spacing */
-            border: none !important; /* Remove dividing line */
-            transition: background-color 0.3s ease, color 0.3s ease; 
-             }
+            font-size: 16px;
+            color: #333333; /* Neutral text color */
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+        }
 
         .ui.menu .item:hover {
-            border: 2px solid #28a745; /* Add a green border */  
+            color: #007bff; /* Subtle blue hover effect */
         }
+
         /* Dropdown Menu Styling */
         .ui.dropdown .menu {
-            border-radius: 8px !important; /* Add rounded corners */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
-            background-color: #1b1c1d; /* Match the navbar background */
-            border: 2px solid #28a745; /* Add a green border */
+            border-radius: 4px;
+            box-shadow: none; /* Remove shadows */
+            border: 1px solid #e0e0e0; /* Subtle border */
+            background-color: #ffffff;
         }
 
         .ui.dropdown .menu .item {
-            color: #ffffff !important; /* White text for better visibility */
-            padding: 10px 15px; /* Adjust padding for better spacing */
-            transition: background-color 0.3s ease, color 0.3s ease;
+            color: #333333;
+            padding: 8px 12px;
+            transition: background-color 0.3s ease;
         }
 
         .ui.dropdown .menu .item:hover {
-            background-color: #28a745 !important; /* Green background on hover */
-            color: #ffffff !important; /* Keep text white on hover */
+            background-color: #f8f9fa; /* Light hover effect */
         }
 
-        /* Buttons Styling */
+        /* Button Styling */
         .ui.green.button {
-            background: linear-gradient(90deg, #28a745, #218838) !important;
-            color: #fff !important;
-            border-radius: 5px !important;
-            transition: background 0.3s ease;
+            background-color: #007bff; /* Flat blue button */
+            color: #ffffff;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
         }
 
         .ui.green.button:hover {
-            background: linear-gradient(90deg, #218838, #1e7e34) !important;
+            background-color: #0056b3; /* Darker blue on hover */
         }
 
-        
-
-        .ui.grey.button:hover {
-            background: linear-gradient(90deg, #5a6268, #495057) !important;
+        /* Container Styling */
+        .ui.container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0; /* Subtle border */
+            border-radius: 4px;
         }
     </style>
-=======
-    <!-- hello world -->
-<!-- hello world -->
- <!-- hello world -->
-  <!-- hello world -->
-  <style>
-    /* Remove rounded corners for navigation */
-    .ui.menu {
-        border-radius: 0 !important;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Style for the menu items */
-    .ui.menu .item {
-        font-weight: 900;
-        transition: background-color 0.3s ease;
-    }
-
-    /* Hover effects */
-    .ui.menu .item:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Dropdown Menu Style */
-    .ui.dropdown .menu {
-        border-radius: 0 !important; /* Remove rounded corners */
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-    .ui.menu .item.bold {
-        font-weight: 900; /* Make it extra bold */
-    } 
-/* Make it extra bold */
-</style>
-
->>>>>>> b965e2630ee255db4016ea8b51fa8076776a1d97
 </head>
 <body>
-  <!-- Semantic UI Menu -->
-  <div class="ui inverted menu" style="display: flex; align-items: center; justify-content: space-between; padding: 0 20px;" x-data="{ showMenu: false }">
+  <!-- Minimalist Navbar -->
+  <div class="ui menu" style="display: flex; align-items: center; justify-content: space-between;">
     <!-- Logo Placeholder -->
     <div class="item" style="padding: 0;">
-        <img src="path/to/logo-placeholder.png" alt="Logo" style="height: 40px; width: auto;">
+        <img src="images/logo.jpg" alt="Logo" style="height: 30px; width: auto;">
     </div>
 
     <!-- Navigation Links -->
-        <div style="display: flex; gap: 20px;">
-            <a class="item" @click.prevent="navigateTo('home/welcome')">Home</a>
-            <a class="item" @click.prevent="navigateTo('about/about')">About</a>
-        <!-- Dropdown for Contacts -->
-        <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">Contact <i class="dropdown icon"></i>
+    <div style="display: flex; gap: 15px;">
+        <a class="item" @click.prevent="navigateTo('home/welcome')">Home</a>
+        <a class="item" @click.prevent="navigateTo('about/about')">About</a>
+        <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">
+            Contact <i class="dropdown icon"></i>
             <div class="menu" x-show="open" @click.outside="open = false">
                 <a class="item" href="#" @click.prevent="navigateTo('contacts/contact_all'); open = false;">All Contacts</a>
                 <a class="item" href="#" @click.prevent="navigateTo('contacts/contact_add'); open = false;">Add Contact</a>
             </div>
         </div>
-        <!-- Dropdown for Chat -->
         <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">
             Chat <i class="dropdown icon"></i>
             <div class="menu" x-show="open" @click.outside="open = false">
-                <a class="item" href="#" @click.prevent="navigateTo('chat/chat_list'); open = false;">Chat list</a>
-                <a class="item" href="#" @click.prevent="navigateTo('chat/new_chat'); open = false;">New chat</a>
+                <a class="item" href="#" @click.prevent="navigateTo('chat/chat_list'); open = false;">Chat List</a>
+                <a class="item" href="#" @click.prevent="navigateTo('chat/new_chat'); open = false;">New Chat</a>
             </div>
         </div>
-
-        <!-- Dropdown for Products -->
         <div class="ui dropdown item" x-data="{ open: false }" @click="open = !open">
-            Products <i class="dropdown icon"></i>
+            Product <i class="dropdown icon"></i>
             <div class="menu" x-show="open" @click.outside="open = false">
-                <a class="item" href="#" @click.prevent="navigateTo('Products/shop_home'); open = false;">HOME</a>
-                <a class="item" href="#" @click.prevent="navigateTo('Products/cart'); open = false;">CART</a>
-                <a class="item" href="#" @click.prevent="navigateTo('Products/track_order'); open = false;">ORDER</a>
-                <a class="item" href="#" @click.prevent="navigateTo('Products/checkout'); open = false;">CHECKOUT</a>
+                <a class="item" href="#" @click.prevent="navigateTo('products/product_add'); open = false;">Add Product</a>
+                <a class="item" href="#" @click.prevent="navigateTo('products/product_display'); open = false;">Display Products</a>
+                <a class="item" href="#" @click.prevent="navigateTo('products/view_cart'); open = false;">View Cart</a>
+                <a class="item" href="#" @click.prevent="navigateTo('products/check_out'); open = false;">Checkout</a>
+                <a class="item" href="#" @click.prevent="navigateTo('products/order_list'); open = false;">Order List</a>
             </div>
         </div>
-        <a class="item" @click.prevent="navigateTo('services/service')">Services</a>
     </div>
 
     <!-- Right Menu -->
-    <div style="display: flex; margin-left: auto; gap: 15px;">
-        <a class="ui green small button"><i class="user icon"></i> Login</a>
-        <a class="ui grey small button"><i class="user icon"></i> Signup</a>
+    <div style="display: flex; gap: 10px;">
+        <a class="ui green small button"><i class="user icon"></i> Logout</a>
     </div>
   </div>
 
-  <!-- Semantic UI Container for Page Content -->
+  <!-- Minimalist Content Container -->
   <div class="ui container" id="app-content">
       <!-- Dynamic content will be loaded here -->
   </div>

@@ -1,6 +1,214 @@
-<div></div>
-<div class="ui segment">
 
-<h1>Welcome to contact application.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="../../config/localui/semantic.min.css">
+    <style>
+        /* Hero Banner Styling */
+        .hero-banner {
+            background-color: #000000; /* Razer Black */
+            color: #44D62C; /* Razer Neon Green */
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 2rem;
+            font-weight: bold;
+        }
 
-</div>
+        /* Category Grid Styling */
+        .category-grid .card {
+            border: 1px solid #44D62C; /* Neon Green Border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #1A1A1A; /* Dark Gray */
+        }
+
+        .category-grid .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-grid .card .content {
+            background-color: #000000; /* Razer Black */
+            color: #44D62C; /* Neon Green */
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Flash Deals Section */
+        .flash-deals .card {
+            border: 1px solid #44D62C; /* Neon Green Border */
+            background-color: #1A1A1A; /* Dark Gray */
+        }
+
+        .flash-deals .card .price {
+            color: #44D62C; /* Neon Green */
+            font-weight: bold;
+        }
+
+        .flash-deals .card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Grid Layout Styling */
+        .featured-grid .item img {
+            width: 100%; /* Make the image responsive */
+        height: 200px; /* Set a fixed height */
+        object-fit: cover; /* Ensure the image scales properly without distortion */
+        border-radius: 10px; /* Optional: Keep the rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for aesthetics */
+        transition: transform 0.3s ease;
+        }
+
+        .featured-grid .item:hover img {
+            transform: scale(1.05);
+        }
+
+        .featured-grid .item .content {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+        Welcome to Our Razer-Like Store!
+    </div>
+
+    <!-- Categories Section -->
+    <div class="ui container" style="margin-top: 40px;">
+        <h2 class="ui header" style="color: #44D62C;">Categories</h2>
+        <div class="ui four column grid category-grid">
+            <div class="column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="../../images/laptop.webp" alt="Category 1">
+                    </div>
+                    <div class="content">
+                        <h4 class="header">Category 1</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="../../images/mob.webp" alt="Mobiles & Gadgets">
+                    </div>
+                    <div class="content">
+                        <h4 class="header">Mobiles & Gadgets</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="../../images/headset.webp" alt="Home Appliances">
+                    </div>
+                    <div class="content">
+                        <h4 class="header">Home Appliances</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="../../images/cont.jpg" alt="Women's Accessories">
+                    </div>
+                    <div class="content">
+                        <h4 class="header">Women's Accessories</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Products Section -->
+    <div class="ui container" style="margin-top: 40px;">
+        <h2 class="ui header">Featured Products</h2>
+        <div class="ui three column grid featured-grid">
+            <div class="column">
+                <div class="item">
+                    <img src="../../images/mouse.png" alt="Product 1">
+                    <div class="content">
+                        <h3>Razer Pro Click V2</h3>
+                        <p>Seamless ergonomics. Effortless performance.</p>
+                        <a href="#" class="ui green button">Learn More</a>
+                        <a href="#" class="ui button">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="item">
+                    <img src="../../images/keybo.webp" alt="Product 2">
+                    <div class="content">
+                        <h3>Razer Huntsman V3 Pro Mini</h3>
+                        <p>Now available in white.</p>
+                        <a href="#" class="ui green button">Learn More</a>
+                        <a href="#" class="ui button">Buy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="item">
+                    <img src="../../images/https___medias-p1.phoenix.razer.com_sys-master-phoenix-images-container_h5b_h0a_9085363126302_laptop-stand-mercury-500x500.png" alt="Product 3">
+                    <div class="content">
+                        <h3>Razer Adjustable Laptop Stand</h3>
+                        <p>Elevate. Calibrate. Dominate.</p>
+                        <a href="#" class="ui green button">Learn More</a>
+                        <a href="#" class="ui button">Buy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flash Deals Section -->
+    <div class="ui container" style="margin-top: 40px;">
+        <h2 class="ui header" style="color: #44D62C;">Flash Deals</h2>
+        <div class="ui three column grid flash-deals">
+            <div class="column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="../../images/sling.png" alt="Deal 1">
+                    </div>
+                    <div class="content">
+                        <h4 class="header">Deal 1</h4>
+                        <p class="price">$30</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="../../images/snakr.png" alt="Deal 2">
+                    </div>
+                    <div class="content">
+                        <h4 class="header">Product 2</h4>
+                        <p class="price">$50</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <div class="ui card">
+                    <div class="image">
+                        <img src="../../images/jacket.png" alt="Deal 3">
+                    </div>
+                    <div class="content">
+                        <h4 class="header">Product 3</h4>
+                        <p class="price">$70</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="ui inverted vertical footer segment" style="margin-top: 40px;">
+        <div class="ui container">
+            <p>© 2023 Ecommerce Store. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
